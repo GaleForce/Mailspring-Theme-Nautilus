@@ -1,10 +1,10 @@
 {
-  "name": "theme-starter",
-  "title": "Starer Theme",
-  "displayName": "Starer Theme",
+  "name": "nautilus-theme",
+  "title": "Nautilus Theme",
+  "displayName": "Nautilus",
   "theme": "ui",
   "version": "0.1.0",
-  "description": "A great dark theme to start your own themes.",
+  "description": "Dark theme, without using pure blacks to soften up the included Mailspring theme, inspired in part by the GMK Nautilus colorway.",
   "license": "GPL-3.0",
   "engines": {
     "mailspring": "*"
