@@ -4,6 +4,38 @@ https://github.com/Foundry376/Mailspring/blob/master/app/static/base/ui-variable
 */
 @import "base/ui-variables";
 
+/*       ------ Custom Color Setup ------            */
+
+/*       ------ Color Definitions  ------            */
+
+/* Pantone 533 C = #1f2a44 */
+/* Pantone 534 C = #1b365d */
+/* GMK TU2 Color Code = rgba(37, 205, 197, 1) */
+/* GMK N6 Color Code = rgba(252, 225, 30, 1) */
+
+@pantone533C: #1f2a44;
+@pantone534C: #1b365d;
+@gmkTU2: #25cdc5;
+@gmkN6: #fce11e;
+
+/*       ------ GMK Nautilus Colorway  ------        */
+
+/* Alphas are Pantone 534 C */
+/* Alphas legends are TU2 */
+/* Modifiers are Pantone 533 C */
+/* Modifiers legends are GMK N6 (GMK Color Code) -  */
+/* Alternate modifiers are GMK N6 */
+/* Alternate modifiers legends are Pantone 533 C */
+
+@alphaColor: @pantone534C;
+@alphaLegendColor: @gmkTU2;
+@modifierColor: @pantone533C;
+@modifierLegendColor: @gmkN6;
+@alternateModifierColor: @gmkN6;
+@altModifierColor: @pantone533C;
+
+/*       ------ Standard Variables  ------            */
+
 @gray-base: #ffffff;
 @gray-darker: darken(@gray-base, 13.5%);
 @gray-dark: darken(@gray-base, 20%);
@@ -12,41 +44,45 @@ https://github.com/Foundry376/Mailspring/blob/master/app/static/base/ui-variable
 @gray-lighter: darken(@gray-base, 92.5%);
 @white: #0a0a0a;
 
-@accent-primary: #58b660;
-@accent-primary-dark: darken(@accent-primary, 10%);
+@accent-primary: #fff;
+@accent-primary-dark: @modifierLegendColor;
 
-@background-primary: #212121;
-@background-off-primary: #212121;
-@background-secondary: #121212;
-@background-tertiary: #6d7987;
+@background-primary: @alphaColor;
+@background-off-primary: #fff;
+@background-secondary: @modifierColor;
+@background-tertiary: red;
 
-@border-color-primary: lighten(@background-primary, 10%);
+@border-color-primary: lighten(@background-primary, 30%);
 @border-color-secondary: lighten(@background-secondary, 10%);
 @border-color-tertiary: lighten(@background-tertiary, 10%);
 @border-color-divider: @border-color-secondary;
 
-@text-color: #eee;
-@text-color-subtle: fadeout(@text-color, 20%);
-@text-color-very-subtle: fadeout(@text-color, 40%);
-@text-color-inverse: white;
-@text-color-inverse-subtle: fadeout(@text-color-inverse, 20%);
-@text-color-inverse-very-subtle: fadeout(@text-color-inverse, 50%);
-@text-color-heading: #fff;
+@text-color: #fff;
+@text-color-subtle: #fff;
+@text-color-very-subtle: #fff;
+@text-color-inverse: #000;
+@text-color-inverse-subtle: fadeout(@text-color-inverse, 10%);
+@text-color-inverse-very-subtle: fadeout(@text-color-inverse, 25%);
+@text-color-heading: @modifierLegendColor;
 
-@text-color-link: @accent-primary;
-@text-color-link-hover: @accent-primary-dark;
-@text-color-link-active: @accent-primary-dark;
+@text-color-link: @modifierLegendColor;
+@text-color-link-hover: @modifierLegendColor;
+@text-color-link-active: @modifierLegendColor;
 
-@btn-default-bg-color: lighten(@background-primary, 5%);
+@btn-default-bg-color: @modifierColor;
 @dropdown-default-bg-color: #404040;
 
 @input-bg: #2e2e2e;
 @input-border: @border-color-divider;
 
-@list-bg: #333;
-@list-border: #383838;
-@list-selected-color: @text-color-inverse;
-@list-focused-color: @text-color;
+/* Message List */
 
-@toolbar-background-color: #121212;
-@panel-background-color: #121212;
+@list-bg: @alphaColor;
+@list-border: @alphaColor;
+@list-selected-color: #000;
+@list-focused-color: #000;
+
+/* Sidebar & Msg Panel */
+
+@toolbar-background-color: @alphaLegendColor;
+@panel-background-color: @modifierColor;
