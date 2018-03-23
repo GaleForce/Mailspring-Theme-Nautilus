@@ -13,7 +13,7 @@ stylesheets can call `@import "ui-variables";` and reference it.
 
 /*
 After changing variables to set a base for our theme, we can use
-specific, narrowly-scoped CSS rules to change other things. 
+specific, narrowly-scoped CSS rules to change other things.
 
 Tip: You can use the Developer Tools in Mailspring and "Inspect
 Element" to identify the DOM elements and styles you want to override.
@@ -28,7 +28,7 @@ background color.)
   box-shadow: none;
 }
 
-.thread-icon:not(.thread-icon-unread):not(.thread-icon-star) {
+.thread-icon:not(.thread-icon-unread) {
   -webkit-filter: invert(100%);
 }
 img.content-dark {
@@ -38,8 +38,70 @@ img.content-light {
   -webkit-filter: invert(100%);
 }
 
-.mail-label {
-  -webkit-filter: contrast(110%) brightness(85%);
+.btn {
+    background-image: none;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    transition: 0.3s ease all;
+    cursor: pointer;
+    &:hover {
+        background: #111;
+    }
+}
+
+.button-dropdown .primary-item img.content-mask, 
+.button-dropdown .only-item img.content-mask,
+.button-dropdown .secondary-picker img.content-mask,
+.message-actions-ellipsis img.content-mask,
+.button-dropdown .primary-item, .button-dropdown .only-item,
+.button-dropdown .secondary-picker {
+    color: @alphaColor;
+    background: @alphaColor;
+}
+
+.nylas-outline-view .heading {
+    color: @modifierLegendColor;
+}
+
+.button-dropdown .secondary-items .menu .item:hover {
+    color: @modifierLegendColor;
+}
+
+#message-list .message-header .message-actions-ellipsis {
+    margin: 0 10px;
+}
+
+.button-dropdown .primary-item img.content-mask, .button-dropdown .only-item img.content-mask, .button-dropdown .secondary-picker img.content-mask, .message-actions-ellipsis img.content-mask, .button-dropdown .primary-item, .button-dropdown .only-item, .button-dropdown .secondary-picker {
+    color: @modifierLegendColor;
+}
+
+.sheet-toolbar {
+    border-bottom: 3px solid fade(@alphaLegendColor, 50%);
+}
+
+.sheet-toolbar-container {
+    background: @alphaColor;
+    background-image: none;
+}
+
+.flexbox-handle-horizontal div {
+    border: none;
+}
+
+.search-bar .menu .header-container input {
+    border: none;
+    background-color: red;
+}
+
+.column-ThreadList {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    z-index: 9;
+}
+
+.column-RootSidebar {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    z-index: 10;
 }
 
 #message-list .message-item-wrap .message-item-white-wrap {
@@ -47,18 +109,81 @@ img.content-light {
     0 1px 1.5px rgba(255, 255, 255, 0.08);
 }
 
-.thread-list .list-item:not(.unread):not(.selected):not(.focused) {
-  color: #aaa;
+.btn-feedback {
+    background-image: none;
+    background-color: #FF7043;
+    border: none;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
-#message-list .message-item-wrap .message-item-white-wrap {
-  background: #556275;
-} 
-
-input[type="text"] {
-  background: #1b253b;
+.thread-icon:not(.thread-icon-unread) {
+  -webkit-filter: brightness(10) grayscale(1);
 }
 
-input[type="text"]::placeholder {
-  color: #fff;
+.thread-list .thread-icon.thread-icon-unread, .draft-list .thread-icon.thread-icon-unread {
+    background-image: none;
+    background-color: @alphaLegendColor;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 10px;
+}
+
+@messageBackground: #101010;
+
+#message-list .message-item-area .iframe-container {
+    background-color: #eee;
+}
+
+.composer-inner-wrap .compose-body {
+  background-color: #ccc;
+}
+
+.list-container .list-item {
+  color: #ccc;
+}
+
+.list-container .list-item.focused {
+    background: fade(@modifierLegendColor, 25%);
+}
+
+#message-list .message-item-wrap .message-item-white-wrap,
+#message-list .message-item-wrap.collapsed .message-item-white-wrap {
+    background: lighten(#ccc, 10%);
+}
+
+#message-list .message-item-wrap .message-item-white-wrap.composer-outer-wrap {
+    background: #ccc;
+}
+
+a, a:hover, a:active, a:visited {
+    color: #3e82ff;
+}
+
+#message-list .message-header,
+#message-list .message-item-area {
+    background:  @alphaLegendColor;
+}
+
+#message-list .message-header .message-time,
+#message-list .message-header .message-indicator,
+#message-list .message-item-wrap.collapsed .message-item-area .collapsed-from,
+#message-list .message-item-wrap.collapsed .message-item-area .collapsed-snippet,
+#message-list .message-item-wrap.collapsed .message-item-area .collapsed-timestamp {
+    color: @alphaColor;
+}
+
+.message-participants .from-contact,
+.message-participants .from-label,
+.message-participants .to-label,
+.message-participants .cc-label,
+.message-participants .bcc-label,
+.message-participants .to-contact,
+.message-participants .cc-contact,
+.message-participants .bcc-contact,
+.message-participants .to-everyone {
+    color: @alphaColor;
 }
